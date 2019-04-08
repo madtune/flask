@@ -40,4 +40,5 @@ python ~/server/app.py
 ```
 
 If you have UFW firewall enabled we need to open port by: ```sudo ufw allow 5000 ``` 
+
 Open in your web browser: ```http://server_domain_or_IP:5000``` 
