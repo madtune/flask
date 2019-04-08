@@ -10,20 +10,24 @@ $ source ~/.bashrc
 ```
 
 ### Create a Python Virtual Environment
-We need to create a virtual environment to store our Flask project's Python requirements. After create virtual environment we need to activate:
+We need to create a virtual environment to store our Flask project's Python requirements.
+
+
+
 ```sh
 $ mkdir ~/server
 $ cd ~/server
 $ virtualenv env 
-$ source env/bin/activate
 ```
+
+After create virtual environment we need to activate: ``` source env/bin/activate ```
 
 ### Set Up a Flask Application
 ```sh
 $ pip install flask
 $ nano ~/server/app.py
 ```
-Copy and paste the below code:
+Copy and paste below code:
 ```
 from flask import Flask
 app = Flask(__name__)
