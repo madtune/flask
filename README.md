@@ -6,7 +6,6 @@ Install the Components from the Ubuntu Repositories.
 $ sudo apt-get update
 $ sudo apt-get install python3-pip python3-dev
 $ pip3 install virtualenv --user
-$ source ~/.bashrc
 ```
 
 ### Create a Python Virtual Environment
