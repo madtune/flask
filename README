@@ -1,34 +1,42 @@
-<h1><a id="FLASK_SERVER_SETUP_UBUNTU_1804_0"></a>FLASK SERVER SETUP UBUNTU 18.04</h1>
-<h3><a id="Installation_1"></a>Installation</h3>
-<p>Install the Components from the Ubuntu Repositories.</p>
-<pre><code class="language-sh">$ sudo apt-get update
+# FLASK SERVER SETUP UBUNTU 18.04
+### Installation
+Install the Components from the Ubuntu Repositories.
+```sh
+$ sudo apt-get update
 $ sudo apt-get install python3-pip python3-dev
 $ pip3 install virtualenv --user
-$ <span class="hljs-built_in">source</span> ~/.bashrc
-</code></pre>
-<h3><a id="Create_a_Python_Virtual_Environment_10"></a>Create a Python Virtual Environment</h3>
-<p>We need to create a virtual environment to store our Flask project’s Python requirements. After create virtual environment we need to activate:</p>
-<pre><code class="language-sh">$ mkdir ~/server
-$ <span class="hljs-built_in">cd</span> ~/server
+$ source ~/.bashrc
+```
+
+### Create a Python Virtual Environment
+We need to create a virtual environment to store our Flask project's Python requirements. After create virtual environment we need to activate:
+```sh
+$ mkdir ~/server
+$ cd ~/server
 $ virtualenv env 
-$ <span class="hljs-built_in">source</span> env/bin/activate
-</code></pre>
-<h3><a id="Set_Up_a_Flask_Application_19"></a>Set Up a Flask Application</h3>
-<pre><code class="language-sh">$ pip install flask
+$ source env/bin/activate
+```
+
+### Set Up a Flask Application
+```sh
+$ pip install flask
 $ nano ~/server/app.py
-</code></pre>
-<p>Copy and paste the below code:</p>
-<pre><code>from flask import Flask
+```
+Copy and paste the below code:
+```
+from flask import Flask
 app = Flask(__name__)
 
-@app.route(&quot;/&quot;)
+@app.route("/")
 def hello():
-    return &quot;&lt;h1 style='color:blue'&gt;It's Work!&lt;/h1&gt;&quot;
-if __name__ == &quot;__main__&quot;:
+    return "<h1 style='color:blue'>It's Work!</h1>"
+if __name__ == "__main__":
     app.run(host='0.0.0.0')
-</code></pre>
-<h3><a id="Test_Flask_Application_35"></a>Test Flask Application</h3>
-<pre><code class="language-sh">python ~/server/app.py
-</code></pre>
-<p>If you have UFW firewall enabled we need to open port by: <code>sudo ufw allow 5000</code><br>
-Open in your web browser: <code>http://server_domain_or_IP:5000</code></p>
+```
+### Test Flask Application
+```sh
+python ~/server/app.py
+```
+
+If you have UFW firewall enabled we need to open port by: ```sudo ufw allow 5000 ``` 
+Open in your web browser: ```http://server_domain_or_IP:5000``` 
